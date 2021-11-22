@@ -48,7 +48,7 @@
         </SidebarLink>
 
         <SidebarLink
-            v-if="$page.props.auth.user.user_type"
+            v-if="!$page.props.auth.user.user_type"
             title="Reports"
             :href="route('archive')"
             :active="route().current('archive')"
