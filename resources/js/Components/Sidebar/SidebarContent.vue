@@ -6,7 +6,7 @@
     >
         <!-- Provider Sidebar -->
         <SidebarLink
-            v-if="$page.props.auth.user.user_type == 1"
+            v-if="$page.props.auth.user.user_type"
             title="Dashboard"
             :href="route('dashboard')"
             :active="route().current('dashboard')"
@@ -20,7 +20,7 @@
         </SidebarLink>
 
         <SidebarLink
-            v-if="$page.props.auth.user.user_type == 1"
+            v-if="$page.props.auth.user.user_type"
             title="Profile"
             :href="route('profile')"
             :active="route().current('profile')"
@@ -48,7 +48,7 @@
         </SidebarLink>
 
         <SidebarLink
-            v-if="$page.props.auth.user.user_type == 1"
+            v-if="$page.props.auth.user.user_type"
             title="Reports"
             :href="route('archive')"
             :active="route().current('archive')"
@@ -63,7 +63,7 @@
 
         <!-- User Sidebar -->
         <SidebarLink
-            v-if="$page.props.auth.user.user_type == 0"
+            v-if="!$page.props.auth.user.user_type"
             title="Dashboard"
             :href="route('user.dashboard')"
             :active="route().current('user.dashboard')"
@@ -77,7 +77,7 @@
         </SidebarLink>
 
         <SidebarLink
-            v-if="$page.props.auth.user.user_type == 0"
+            v-if="!$page.props.auth.user.user_type"
             title="User Profile"
             :href="route('user.profile')"
             :active="route().current('user.profile')"
@@ -91,7 +91,7 @@
         </SidebarLink>
 
         <SidebarLink
-            v-show="$page.props.auth.user.user_type == 0"
+            v-show="!$page.props.auth.user.user_type"
             title="User Requests"
             :href="route('user.request')"
             :active="route().current('user.request')"
